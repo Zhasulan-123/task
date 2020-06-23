@@ -1,8 +1,6 @@
 <?php
 
-function __autoload($class_name)
-{
-    # List all the class directories in the array.
+spl_autoload_register(function ($class_name) {
     $array_paths = [
         '/models/',
         '/components/'
@@ -14,4 +12,4 @@ function __autoload($class_name)
             include_once $path;
         }
     }
-}
+});
